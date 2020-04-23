@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{1387667A-2554-4614-953B-EC76ACD571FD}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TechExpozedWeb/UnitTest1.cs">
+    <Files>
+      <File FileName="TechExpozedWeb/UnitTest1.cs" Line="373" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TechExpozedWeb" expanded="True">
+            <Node name="TechExpozedWeb" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="TechExpozedWeb" expanded="True">
+            <Node name="TechExpozedWeb" expanded="True">
+              <Node name="TechExpozedWeb" expanded="True">
+                <Node name="UnitTest1" expanded="True">
+                  <Node name="TestWebPackagePricingPlanFormGetStartedButton" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TechExpozedWeb PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
