@@ -27,13 +27,11 @@ namespace TechExpozedWeb
             //maximize window size
             driver.Manage().Window.Maximize();
             Thread.Sleep(3000);
-            // hover on pricing menu
-            IWebElement pricing = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/a/span"));
-            action.MoveToElement(pricing).Perform();
+            // hover on our services menu
+            action.MoveToElement(driver.FindElement(By.PartialLinkText("Our services"))).Perform();
             Thread.Sleep(2000);
             // go to digital marketing page
-            IWebElement digitalMarketing = driver.FindElement(By.XPath("//html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/ul/li[1]/a/span"));
-            digitalMarketing.Click();
+            driver.FindElement(By.PartialLinkText("Digital Marketing")).Click();
             Thread.Sleep(3000);
 
             driver.Quit();
@@ -46,26 +44,18 @@ namespace TechExpozedWeb
         {
             driver = new ChromeDriver();
             action = new Actions(driver);
-            // navigate to techexpozed page
-            driver.Navigate().GoToUrl("https://techexpozed.co.nz");
+            // navigate to digital marketing page
+            driver.Url = "https://techexpozed.co.nz/marketing.php";
             Thread.Sleep(3000);
             //maximize window size
             driver.Manage().Window.Maximize();
             Thread.Sleep(3000);
-            // hover on pricing menu
-            IWebElement pricing = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/a/span"));
-            action.MoveToElement(pricing).Perform();
-            Thread.Sleep(2000);
-            // go to digital marketing page
-            IWebElement digitalMarketing = driver.FindElement(By.XPath("//html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/ul/li[1]/a/span"));
-            digitalMarketing.Click();
-            Thread.Sleep(10000);
 
             IJavaScriptExecutor js = driver as IJavaScriptExecutor;
             Thread.Sleep(3000);
             js.ExecuteScript("window.scrollBy(0,990);");
             Thread.Sleep(3000);
-            //driver.FindElement(By.XPath("/html/body/div[4]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/div[2]/div/a")).Click();
+            
             //Click on get started button (Flexi starter)
             driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div/div[2]/div/div/div/div[1]/div/div/div/div[3]/a")).Click();
             Thread.Sleep(3000);
@@ -103,14 +93,6 @@ namespace TechExpozedWeb
             //maximize window size
             driver.Manage().Window.Maximize();
             Thread.Sleep(3000);
-            // hover on pricing menu
-            //IWebElement pricing = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/a/span"));
-            //action.MoveToElement(pricing).Perform();
-            //Thread.Sleep(2000);
-            // go to digital marketing page
-            //IWebElement digitalMarketing = driver.FindElement(By.XPath("//html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/ul/li[1]/a/span"));
-            //digitalMarketing.Click();
-            //Thread.Sleep(3000);
 
             //SCROLL DOWN
             IJavaScriptExecutor js = driver as IJavaScriptExecutor;
@@ -122,6 +104,7 @@ namespace TechExpozedWeb
             driver.FindElement(By.XPath("//*[@id='month-tab']/div/div[2]/div/div[3]/div/a")).Click();
             Thread.Sleep(4000);
 
+            // Fill and send the form 
             action.Click(driver.FindElement(By.Id("first_name"))).SendKeys("Tom" + Keys.Tab)
                 .SendKeys("Miller"+Keys.Tab)
                 .SendKeys("tommiller@gmail.com"+Keys.Tab)
@@ -132,13 +115,6 @@ namespace TechExpozedWeb
                 .Build()
                 .Perform();
 
-            
-            //driver.FindElement(By.Id("first_name")).SendKeys("Tom");
-            //driver.FindElement(By.Id("last_name")).SendKeys("Miller");
-            //driver.FindElement(By.Id("email")).SendKeys("fsdvsdjv");
-            //driver.FindElement(By.Id("subject")).SendKeys("vdsanvlk;");
-            //driver.FindElement(By.Id("message")).SendKeys("DSVNJKASK");
-            //driver.FindElement(By.XPath("//*[@id='pricing_form']/div/div[4]/button")).Submit();
             Thread.Sleep(4000);
             driver.Quit();
         }
