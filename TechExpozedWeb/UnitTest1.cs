@@ -11,6 +11,7 @@ namespace TechExpozedWeb
     {
         IWebDriver driver;
         Actions action;
+
         /******************************************/
         /******* digital markerting page **********/
         /******************************************/
@@ -97,19 +98,19 @@ namespace TechExpozedWeb
             driver = new ChromeDriver();
             action = new Actions(driver);
             // navigate to techexpozed page
-            driver.Navigate().GoToUrl("https://techexpozed.co.nz");
+            driver.Navigate().GoToUrl("https://techexpozed.co.nz/pricing-plans.php");
             Thread.Sleep(3000);
             //maximize window size
             driver.Manage().Window.Maximize();
             Thread.Sleep(3000);
             // hover on pricing menu
-            IWebElement pricing = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/a/span"));
-            action.MoveToElement(pricing).Perform();
-            Thread.Sleep(2000);
+            //IWebElement pricing = driver.FindElement(By.XPath("/html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/a/span"));
+            //action.MoveToElement(pricing).Perform();
+            //Thread.Sleep(2000);
             // go to digital marketing page
-            IWebElement digitalMarketing = driver.FindElement(By.XPath("//html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/ul/li[1]/a/span"));
-            digitalMarketing.Click();
-            Thread.Sleep(3000);
+            //IWebElement digitalMarketing = driver.FindElement(By.XPath("//html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/ul/li[1]/a/span"));
+            //digitalMarketing.Click();
+            //Thread.Sleep(3000);
 
             //SCROLL DOWN
             IJavaScriptExecutor js = driver as IJavaScriptExecutor;
@@ -118,14 +119,26 @@ namespace TechExpozedWeb
             Thread.Sleep(3000);
 
             //Click on get started button 
-            driver.FindElement(By.XPath("/html/body/div[3]/div[2]/div/div[2]/div/div/div/div[1]/div/div/div/div[3]/a")).Click();
+            driver.FindElement(By.XPath("//*[@id='month-tab']/div/div[2]/div/div[3]/div/a")).Click();
             Thread.Sleep(4000);
-            driver.FindElement(By.Id("first_name")).SendKeys("Tom");
-            driver.FindElement(By.Id("last_name")).SendKeys("Miller");
-            driver.FindElement(By.Id("email")).SendKeys("fsdvsdjv");
-            driver.FindElement(By.Id("subject")).SendKeys("vdsanvlk;");
-            driver.FindElement(By.Id("message")).SendKeys("DSVNJKASK");
-            driver.FindElement(By.XPath("//*[@id='pricing_form']/div/div[4]/button")).Submit();
+
+            action.Click(driver.FindElement(By.Id("first_name"))).SendKeys("Tom" + Keys.Tab)
+                .SendKeys("Miller"+Keys.Tab)
+                .SendKeys("tommiller@gmail.com"+Keys.Tab)
+                .SendKeys("1234567" + Keys.Tab)
+                .SendKeys("Tesr"+Keys.Tab)
+                .SendKeys("This is a test message"+Keys.Tab)
+                .SendKeys(Keys.Return)
+                .Build()
+                .Perform();
+
+            
+            //driver.FindElement(By.Id("first_name")).SendKeys("Tom");
+            //driver.FindElement(By.Id("last_name")).SendKeys("Miller");
+            //driver.FindElement(By.Id("email")).SendKeys("fsdvsdjv");
+            //driver.FindElement(By.Id("subject")).SendKeys("vdsanvlk;");
+            //driver.FindElement(By.Id("message")).SendKeys("DSVNJKASK");
+            //driver.FindElement(By.XPath("//*[@id='pricing_form']/div/div[4]/button")).Submit();
             Thread.Sleep(4000);
             driver.Quit();
         }
@@ -433,7 +446,6 @@ namespace TechExpozedWeb
             //  navigate to web package page
             driver.FindElement(By.XPath("/html/body/div[2]/div/div/div/div/div/div[2]/div[1]/nav/ul/li[3]/ul/li[2]/a")).Click();
             Thread.Sleep(3000);
-
 
             //click on contact us button
             driver.FindElement(By.XPath("/html/body/div[4]/div[5]/div/div/div[2]/div/div[2]/a")).Click();
